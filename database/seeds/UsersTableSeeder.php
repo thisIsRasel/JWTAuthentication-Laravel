@@ -12,10 +12,22 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create(['name'=>'Wolverine', 'email'=>'wolverine@gmail.com', 'password'=>'wolverine']);
+        User::create([
+            'name'=>'Wolverine', 
+            'email'=>'wolverine@gmail.com', 
+            'password'=> Hash::make('wolverine') 
+        ]);
 
-        User::create(['name'=>'Spiderman', 'email'=>'spiderman@gmail.com', 'password'=>'spiderman']);
+        User::create([
+            'name'=>'Spiderman', 
+            'email'=>'spiderman@gmail.com', 
+            'password'=> Hash::make('spiderman') 
+        ]);
 
-        User::create(['name'=>'Deadpool', 'email'=>'deadpool@gmail.com', 'password'=>'deadpool']);
+        User::create([
+            'name'=>'Deadpool', 
+            'email'=>'deadpool@gmail.com', 
+            'password'=> Hash::make('deadpool') 
+        ]);
     }
 }

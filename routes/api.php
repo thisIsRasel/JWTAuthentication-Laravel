@@ -19,4 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/heroes', 'HeroController@index');
 
+Route::post('/add-hero', 'HeroController@addHero');
+
+Route::post('/login-hero', 'HeroController@loginHero');
+
+Route::get('/authenticate-hero', 'HeroController@getAuthenticatedHero');
+
 
