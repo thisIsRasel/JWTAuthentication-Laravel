@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Message;
 use Hash;
 
 use JWTAuth;
@@ -89,5 +90,25 @@ class HeroController extends Controller
 
 	  // the token is valid and we have found the user via the sub claim
 	  return response()->json(compact('user'));
+	}
+
+	public function sendMessage(Request $request) {
+
+		$messageData = json_decode($request->input('params'));
+
+		$message = new Message;
+		$message->from = $messageData->from;
+		$message->to = $messageData->to;
+		$message->message = $messageData->message;
+		$message_id = $message->save();
+
+		return [ 'success'=> ($message_id ? true : false) ];
+	}
+
+	public function getAllMessages(Request $request) {
+
+		$messages = Message::all();
+
+		return json_encode($messages);
 	}
 }
