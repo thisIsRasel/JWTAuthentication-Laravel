@@ -1,0 +1,11 @@
+{
+    "name": "simplepack/calculator",
+    "description": "This demo package will do some calculations.",
+    "authors": [
+        {
+            "name": "Rasel Ahammed",
+            "email": "raselcse20@gmail.com"
+        }
+    ],
+    "require": {}
+}

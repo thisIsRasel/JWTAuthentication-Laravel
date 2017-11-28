@@ -182,6 +182,8 @@ return [
          */
 
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+
+        Simplepack\Calculator\CalculatorServiceProvider::class,
     ],
 
     /*
