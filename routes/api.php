@@ -27,6 +27,6 @@ Route::get('/authenticate-hero', 'HeroController@getAuthenticatedHero');
 
 Route::post('/send_message', 'HeroController@sendMessage');
 
-Route::get('/messages', 'HeroController@getAllMessages');
+Route::get('/messages/{heroName}', 'HeroController@getAllMessages');
 
 

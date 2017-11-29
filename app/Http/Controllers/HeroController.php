@@ -105,9 +105,9 @@ class HeroController extends Controller
 		return [ 'success'=> ($message_id ? true : false) ];
 	}
 
-	public function getAllMessages(Request $request) {
+	public function getAllMessages(Request $request, $heroName) {
 
-		$messages = Message::all();
+		$messages = Message::where(['to' => $heroName])->get();
 
 		return json_encode($messages);
 	}
